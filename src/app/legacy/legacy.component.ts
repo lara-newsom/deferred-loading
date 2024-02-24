@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import * as _ from 'lodash';
-import { Observable, interval, map, startWith } from 'rxjs';
+import { interval, map, startWith } from 'rxjs';
+import { toSignal } from '@angular/core/rxjs-interop';
 
 @Component({
   selector: 'app-legacy',
@@ -23,11 +24,7 @@ export class LegacyComponent {
     {thing: 'Unicorns', coolFactor: 9},
   ];
   firstCool = _.first(this.thingsThatAreCool) as {thing: string; coolFactor: number};
-  randomCool: Observable<{
-    thing: string;
-    coolFactor: number;
-    index: number;
-  }> = interval(3000).pipe(
+  randomCool = toSignal(interval(3000).pipe(
     map(() => {
       const random = _.random(0, this.thingsThatAreCool.length - 1)
       return {
@@ -39,5 +36,5 @@ export class LegacyComponent {
       ...this.firstCool,
       index: 0,
     })
-  );
+  ));
 }

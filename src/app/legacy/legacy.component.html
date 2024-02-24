@@ -1,8 +1,6 @@
-<h2>It's 1988 And These Things Are Cool</h2>
-<div class="cool-wrapper">
-  <ng-container
-    *ngIf="randomCool | async as cool"
-  >
+<div class="content-wrapper">
+  <h2>It's 1988 And These Things Are Cool</h2>
+  @if(randomCool(); as cool) {
     <p class="title">{{ cool.thing}} </p>
     <div class="temp-wrapper">
       <img width="300px;" [src]="'../../assets/images/' + cool.index + '.jpg'"/>
@@ -20,5 +18,5 @@
       </div>
     </div>
     <p class="factor">Cool Factor: {{cool.coolFactor}}</p>
-  </ng-container>
+  }
 </div>

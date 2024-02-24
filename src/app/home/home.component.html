@@ -1,40 +1,25 @@
 <div class="main-container">
-  <ul>
-    <li>
-      <h2>Welcome To My Weirdly Heavy Application!</h2>
-    </li>
-    @if(showLegacy){
-      <li>
-        <div><button class="close" (click)="showLegacy = !showLegacy">I Am Done Seeing Cool Things</button></div>
-        <app-legacy></app-legacy>
-      </li>
-    } @else {
-      <li>
-        <button (click)="showLegacy = !showLegacy">Wanna See Something Cool?</button>
-      </li>
-    }
+  <mat-tab-group>
+    <mat-tab label="Welcome to A Weirdly Heavy App">
+      <div class="main-content">
+        <h2>Welcome to my weirdly heavy application with lots of third party packages.</h2>
+          <p>Our mission for this application is improve the load time.</p>
+          <p>To do that, we need to figure out the best way to perform code splitting or lazy loading of the bundle.</p>
+          <p>In this build the code is in one bundle, the initial bundle is:</p>
+          <p><b>Raw Size:</b> 2.07 MB</p>
+          <p><b>Est Transfer Size:</b> 377.28 kB</p>
 
-    @if(showClock){
-      <li>
-        <div><button class="close" (click)="showClock = !showClock">I Know What Time It Is.</button></div>
-        <app-clock></app-clock>
-      </li>
-    } @else {
-      <li>
-        <button (click)="showClock = !showClock">What Time Is It?</button>
-      </li>
-    }
-
-    @if(showList){
-      <li>
-        <div><button class="close" (click)="showList = !showList">I Found The Cat I Was Looking For.</button></div>
-        <app-list></app-list>
-      </li>
-    } @else {
-      <li>
-        <button (click)="showList = !showList">Are You Looking For A Cat?</button>
-      </li>
-    }
-  </ul>
+      </div>
+    </mat-tab>
+    <mat-tab label="What Time Is It?">
+      <app-clock></app-clock>
+    </mat-tab>
+    <mat-tab label="Wanna See Something Cool?">
+      <app-legacy></app-legacy>
+    </mat-tab>
+    <mat-tab label="Are You Looking For A Cat?">
+      <app-list></app-list>
+    </mat-tab>
+  </mat-tab-group>
 </div>
 
