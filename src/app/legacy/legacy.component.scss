@@ -1,0 +1,39 @@
+.cool-wrapper{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title{
+  font-size: 2rem;
+  font-weight: 900;
+  margin: 10px;
+  &::after{
+    content: '***';
+  }
+  &::before{
+    content: '***';
+  }
+}
+.factor{
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 10px;
+  color: rgb(21, 112, 153);
+}
+.temperature{
+  background-color: white;
+  border: 1px solid black;
+  margin: 2px;
+  width: 28px;
+  height: 28px;
+}
+.cool-factor{
+  background-color: rgb(248, 10, 62);
+}
+.temp-wrapper{
+  display: flex;
+  img{
+    margin-right: 25px;
+  }
+}

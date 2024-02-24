@@ -1,0 +1,24 @@
+.main-container {
+  display: flex;
+  width: 100%;
+  align-content: center;
+}
+ul{
+  display: flex;
+  justify-content: space-between;
+  align-content: center;
+  flex-direction: column;
+}
+li{
+  margin-top: 25px;
+}
+
+button{
+  background-color: aqua;
+  padding: 15px;
+  border-radius: 25px;
+}
+
+.close{
+  background-color: rgb(200, 248, 200);
+}

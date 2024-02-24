@@ -1,1 +1,40 @@
-<h2>Welcome Home</h2>
+<div class="main-container">
+  <ul>
+    <li>
+      <h2>Welcome To My Weirdly Heavy Application!</h2>
+    </li>
+    @if(showLegacy){
+      <li>
+        <div><button class="close" (click)="showLegacy = !showLegacy">I Am Done Seeing Cool Things</button></div>
+        <app-legacy></app-legacy>
+      </li>
+    } @else {
+      <li>
+        <button (click)="showLegacy = !showLegacy">Wanna See Something Cool?</button>
+      </li>
+    }
+
+    @if(showClock){
+      <li>
+        <div><button class="close" (click)="showClock = !showClock">I Know What Time It Is.</button></div>
+        <app-clock></app-clock>
+      </li>
+    } @else {
+      <li>
+        <button (click)="showClock = !showClock">What Time Is It?</button>
+      </li>
+    }
+
+    @if(showList){
+      <li>
+        <div><button class="close" (click)="showList = !showList">I Found The Cat I Was Looking For.</button></div>
+        <app-list></app-list>
+      </li>
+    } @else {
+      <li>
+        <button (click)="showList = !showList">Are You Looking For A Cat?</button>
+      </li>
+    }
+  </ul>
+</div>
+

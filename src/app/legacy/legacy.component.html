@@ -1,0 +1,24 @@
+<h2>It's 1988 And These Things Are Cool</h2>
+<div class="cool-wrapper">
+  <ng-container
+    *ngIf="randomCool | async as cool"
+  >
+    <p class="title">{{ cool.thing}} </p>
+    <div class="temp-wrapper">
+      <img width="300px;" [src]="'../../assets/images/' + cool.index + '.jpg'"/>
+      <div>
+        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 10 }"></div>
+        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 9 }"></div>
+        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 8 }"></div>
+        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 7 }"></div>
+        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 6 }"></div>
+        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 5 }"></div>
+        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 4 }"></div>
+        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 3 }"></div>
+        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 2 }"></div>
+        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 1 }"></div>
+      </div>
+    </div>
+    <p class="factor">Cool Factor: {{cool.coolFactor}}</p>
+  </ng-container>
+</div>
