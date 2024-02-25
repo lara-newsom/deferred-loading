@@ -20,5 +20,5 @@ import { HeroComponent } from './hero/hero.component';
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  title = 'deferred-loading';
+  title = 'Meowmerican Wanderlust';
 }
