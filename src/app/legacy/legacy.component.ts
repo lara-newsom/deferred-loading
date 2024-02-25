@@ -23,18 +23,41 @@ export class LegacyComponent {
     {thing: 'Tracksuits', coolFactor: 6},
     {thing: 'Unicorns', coolFactor: 9},
   ];
-  firstCool = _.first(this.thingsThatAreCool) as {thing: string; coolFactor: number};
   randomCool = toSignal(interval(3000).pipe(
     map(() => {
-      const random = _.random(0, this.thingsThatAreCool.length - 1)
-      return {
-        ...this.thingsThatAreCool[random],
-        index: random
-      }
+      const random = _.random(0, this.thingsThatAreCool.length - 1);
+      const previous = random - 1 >= 0 ? random -1 : this.thingsThatAreCool.length - 1;
+      const next = random + 1 <= this.thingsThatAreCool.length - 1 ?  random + 1 : 0;
+      return [
+        {
+          ...this.thingsThatAreCool[random],
+          index: random
+        },
+        {
+          ...this.thingsThatAreCool[previous],
+          index: previous
+        },
+        {
+          ...this.thingsThatAreCool[next],
+          index: next
+        }
+    ]
     }),
-    startWith({
-      ...this.firstCool,
-      index: 0,
-    })
+    startWith(
+      [
+        {
+          ...this.thingsThatAreCool[0],
+          index: 0,
+        },
+        {
+          ...this.thingsThatAreCool[1],
+          index: 1,
+        },
+        {
+          ...this.thingsThatAreCool[2],
+          index: 2,
+        },
+
+      ])
   ));
 }

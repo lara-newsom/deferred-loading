@@ -1,16 +1,10 @@
 .title{
-  font-size: 2rem;
+  font-size: 1.6rem;
   font-weight: 900;
-  margin: 10px;
-  &::after{
-    content: '***';
-  }
-  &::before{
-    content: '***';
-  }
+  margin: 10px 0;
 }
 .factor{
-  font-size: 1.5rem;
+  font-size: 1rem;
   font-weight: 500;
   margin: 10px;
   color: rgb(21, 112, 153);
@@ -18,7 +12,7 @@
 .temperature{
   background-color: white;
   border: 1px solid black;
-  margin: 2px;
+  margin: 2px 0;
   width: 28px;
   height: 28px;
 }
@@ -27,7 +21,19 @@
 }
 .temp-wrapper{
   display: flex;
+  justify-content: center;
   img{
     margin-right: 25px;
+  }
+}
+.cool-things{
+  display: flex;
+  justify-content: space-between;
+  &>div {
+    margin: 0 20px;
+    padding: 10px;
+    background-color: var(--white);
+    text-align: center;
+    align-items: center;
   }
 }

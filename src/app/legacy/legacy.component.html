@@ -1,22 +1,25 @@
 <div class="content-wrapper">
   <h2>It's 1988 And These Things Are Cool</h2>
-  @if(randomCool(); as cool) {
-    <p class="title">{{ cool.thing}} </p>
-    <div class="temp-wrapper">
-      <img width="300px;" [src]="'../../assets/images/' + cool.index + '.jpg'"/>
+  <div class="cool-things">
+    @for(cool of randomCool(); track cool.index) {
       <div>
-        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 10 }"></div>
-        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 9 }"></div>
-        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 8 }"></div>
-        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 7 }"></div>
-        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 6 }"></div>
-        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 5 }"></div>
-        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 4 }"></div>
-        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 3 }"></div>
-        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 2 }"></div>
-        <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 1 }"></div>
+        <div class="temp-wrapper">
+          <img width="300px;" [src]="'../../assets/images/' + cool.index + '.jpg'"/>
+          <div>
+            <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 10 }"></div>
+            <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 9 }"></div>
+            <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 8 }"></div>
+            <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 7 }"></div>
+            <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 6 }"></div>
+            <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 5 }"></div>
+            <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 4 }"></div>
+            <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 3 }"></div>
+            <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 2 }"></div>
+            <div class="temperature" [ngClass]="{'cool-factor': cool.coolFactor >= 1 }"></div>
+          </div>
+        </div>
+        <p class="title">{{ cool.thing}} <span class="factor">Cool Factor: {{cool.coolFactor}}</span></p>
       </div>
-    </div>
-    <p class="factor">Cool Factor: {{cool.coolFactor}}</p>
-  }
+    }
+  </div>
 </div>
