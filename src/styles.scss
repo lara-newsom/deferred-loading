@@ -16,7 +16,7 @@
   --drop-shadow: oklch(20.23% 0.026 27.86);
   --white: oklch(100% 0 0);
   --black: oklch(0% 0 0);
-  --border-highlight: oklch(85.4% 0.064 64.83);
+  --border-highlight: oklch(72.94% 0.138 54);
   --error-red: oklch(64.8% 0.21 29.23);
 
   // font variables
@@ -58,7 +58,7 @@ section,
   max-width: 1500px;
   margin: 0 auto;
   min-width: 300px;
-  padding-bottom: 20px;
+  padding-bottom: 40px;
 }
 
 ul {
@@ -77,4 +77,5 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   display: flex;
   flex-direction: column;
   align-items: center;
+  min-height: 500px;
 }

@@ -1,0 +1,13 @@
+<h3>
+  {{ footerText }}
+</h3>
+@for(cat of cats; track cat.name) {
+  <mat-accordion>
+    <mat-expansion-panel hideToggle>
+      <mat-expansion-panel-header>
+        <mat-panel-title>{{ cat.name }}</mat-panel-title>
+      </mat-expansion-panel-header>
+      <p>{{ cat.description }}</p>
+    </mat-expansion-panel>
+  </mat-accordion>
+}

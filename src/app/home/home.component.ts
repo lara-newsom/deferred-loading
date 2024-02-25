@@ -3,6 +3,7 @@ import { LegacyModule } from '../legacy/legacy.component.module';
 import { ClockComponent } from '../clock/clock.component';
 import { ListComponent } from '../list/list.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-home',
@@ -11,7 +12,8 @@ import {MatTabsModule} from '@angular/material/tabs';
     LegacyModule,
     ClockComponent,
     ListComponent,
-    MatTabsModule
+    MatTabsModule,
+    FooterComponent
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'

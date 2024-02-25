@@ -1,1 +1,22 @@
-<p>footer works!</p>
+<footer>
+  <img [src]="'../../assets/footer/hortense.jpg'"/>
+  <mat-tab-group>
+    <mat-tab label="Hortense Biography">
+      @for(description of descriptionParagraphs; track description){
+        <p>
+          {{ description }}
+        </p>
+      }
+    </mat-tab>
+    <mat-tab label="About This Website">
+      @for(history of websiteParagraphs; track history){
+        <p>
+          {{ history }}
+        </p>
+      }
+    </mat-tab>
+    <mat-tab label="Meet Horty's Cats">
+     <app-cats></app-cats>
+    </mat-tab>
+  </mat-tab-group>
+</footer>
