@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import * as _ from 'lodash';
-import { interval, map, startWith } from 'rxjs';
+import { delay, interval, map, startWith, switchMap } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
+import { LegacyService } from './legacy.service';
 
 @Component({
   selector: 'app-legacy',
@@ -60,4 +61,17 @@ export class LegacyComponent {
 
       ])
   ));
+  private readonly legacyService = inject(LegacyService);
+  coolStuffCarousel$ = this.legacyService.coolStuff$.pipe(
+    switchMap((coolStuff) => {
+      let index = 0;
+      return interval(3000).pipe(
+      map(() => {
+        index = _.random(0, coolStuff.length - 1);
+        return coolStuff[index]
+      }),
+      startWith(coolStuff[0])
+    )}
+    )
+  )
 }

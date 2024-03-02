@@ -22,4 +22,13 @@
       </div>
     }
   </div>
+
+  <h2>Coolest Things Of All Times</h2>
+  @if(coolStuffCarousel$ | async; as thing){
+    <div class="all-time">
+      <h3>{{ thing.name }}</h3>
+      <p>{{ thing.description }}</p>
+      <p><b>{{ thing.era }}</b></p>
+    </div>
+  }
 </div>

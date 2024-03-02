@@ -1,6 +1,16 @@
 <div class="content-wrapper">
   <h2>Do you know what time it is?</h2>
+  <select #timezones (change)=" clockService.selectTimeZone(timezones.value)">
+    @for(zone of clockService.sortedTimeZones; track zone){
+      <option [value]="zone.name">{{ zone.name }} (Offset: {{zone.offset}})</option>
+    }
+  </select>
+
   <div class="clock">
     <p>{{ now() | date: 'medium' }}</p>
+  </div>
+  <div class="all-time">
+    <h3>Timezone: {{ clockService.selectedTimeZone().name}}</h3>
+    <p>{{ clockService.selectedTimeZone().description}}</p>
   </div>
 </div>
