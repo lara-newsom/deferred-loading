@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink, RouterOutlet } from '@angular/router';
-import { LegacyModule } from './legacy/legacy.component.module';
 import { HeaderComponent } from './header/header.component';
 import { HeroComponent } from './hero/hero.component';
 
@@ -12,7 +11,6 @@ import { HeroComponent } from './hero/hero.component';
     CommonModule,
     RouterOutlet,
     RouterLink,
-    LegacyModule,
     HeaderComponent,
     HeroComponent,
   ],
