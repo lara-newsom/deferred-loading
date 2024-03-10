@@ -1,7 +1,3 @@
-@if(interval | async; as i){
-  <div
-    class="hero"
-    [ngClass]="'hero-' + i"
-  >
+  <div class="hero">
+    <img [src]="'../../assets/hero/' + (intervalSignal() % 10 || 10) + '.jpg'" alt=""/>
   </div>
-}

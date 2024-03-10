@@ -1,18 +1,15 @@
-import { AsyncPipe, NgClass } from '@angular/common';
-import { Component } from '@angular/core';
+import { AsyncPipe, NgOptimizedImage } from '@angular/common';
+import { Component, computed, signal } from '@angular/core';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { Observable, interval, map, startWith, } from 'rxjs';
 
 @Component({
   selector: 'app-hero',
   standalone: true,
-  imports: [NgClass, AsyncPipe],
+  imports: [ AsyncPipe, NgOptimizedImage,],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.scss'
 })
 export class HeroComponent {
-
-  interval: Observable<number> = interval(3000).pipe(
-    map((index: number) => index % 10 || 10),
-    startWith(10)
-  );
+  intervalSignal = toSignal(interval(3000), {initialValue: 0});
 }

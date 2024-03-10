@@ -15,7 +15,6 @@ interface Cat {
   standalone: true,
   imports: [AgGridAngular],
   templateUrl: './list.component.html',
-  styleUrl: './list.component.scss',
 })
 export class ListComponent {
   rowData: Cat[] = [
