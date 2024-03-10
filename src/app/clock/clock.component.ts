@@ -1,11 +1,8 @@
-import { Component, computed, inject, signal } from '@angular/core';
-import moment from 'moment';
+import { Component, computed, inject } from '@angular/core';
 import { interval } from 'rxjs/internal/observable/interval';
-import { tap } from 'rxjs/internal/operators/tap';
-import { takeUntilDestroyed, toSignal } from '@angular/core/rxjs-interop';
+import { toSignal } from '@angular/core/rxjs-interop';
 import { DatePipe } from '@angular/common';
-import { ClockService, TimeZone } from './clock.service';
-import { HttpEvent } from '@angular/common/http';
+import { ClockService } from './clock.service';
 
 @Component({
   selector: 'app-clock',
