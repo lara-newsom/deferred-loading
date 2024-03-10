@@ -4,6 +4,8 @@ import { ListComponent } from '../list/list.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { FooterComponent } from '../footer/footer.component';
 import { LegacyComponent } from '../legacy/legacy.component';
+import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+
 
 @Component({
   selector: 'app-home',
@@ -14,6 +16,7 @@ import { LegacyComponent } from '../legacy/legacy.component';
     MatTabsModule,
     FooterComponent,
     LegacyComponent,
+    MatProgressSpinnerModule,
   ],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
