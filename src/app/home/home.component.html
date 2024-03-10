@@ -6,18 +6,30 @@
         <p>Our mission for this application is improve the load time.</p>
         <p>To do that, we need to figure out the best way to perform code splitting or lazy loading of the bundle.</p>
         <p>In this branch, the initial bundle size is:</p>
-        <p class="size"><b>Raw Size:</b> 2.17 MB</p>
-        <p class="size"><b>Est Transfer Size:</b> 393.81 kB</p>
+        <p class="size"><b>Raw Size:</b> 837.92 kB</p>
+        <p class="size"><b>Est Transfer Size:</b> 168.02 kB</p>
       </div>
     </mat-tab>
     <mat-tab label="What Time Is It?">
-      <app-clock/>
+      @defer {
+        <app-clock/>
+      } @placeholder {
+        <div class="content-wrapper"><h2> Clock Placeholder</h2></div>
+      }
     </mat-tab>
     <mat-tab label="Wanna See Something Cool?">
-      <app-legacy/>
+      @defer {
+        <app-legacy/>
+      } @placeholder {
+        <div class="content-wrapper"><h2>Legacy Placeholder</h2></div>
+      }
     </mat-tab>
     <mat-tab label="Are You Looking For a Cat?">
-      <app-list/>
+      @defer {
+        <app-list/>
+      } @placeholder {
+        <div class="content-wrapper"><h2> List Placeholder</h2></div>
+      }
     </mat-tab>
   </mat-tab-group>
 </div>
