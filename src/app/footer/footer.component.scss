@@ -1,12 +1,19 @@
-footer{
+footer {
   display: flex;
   margin-bottom: 30px;
-  width: 90%;
-  img{
+
+  img {
     max-height: 300px;
     margin: 60px;
   }
-  p{
-    max-height: 300px;
+}
+
+@media screen and (width < 599px) {
+  footer {
+    flex-direction: column;
+
+    img {
+      margin: 0;
+    }
   }
 }

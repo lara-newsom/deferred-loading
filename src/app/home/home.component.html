@@ -11,18 +11,33 @@
       </div>
     </mat-tab>
     <mat-tab label="What Time Is It?">
-      @defer{
-        <app-clock></app-clock>
+      @defer(on viewport){
+        <app-clock/>
+      } @placeholder {
+        <div class="content-wrapper">
+          <h2>What Time Is It?</h2>
+          <p>It's time to get a clock!</p>
+        </div>
       }
     </mat-tab>
     <mat-tab label="Wanna See Something Cool?">
-      @defer{
-        <app-legacy></app-legacy>
+      @defer(on viewport){
+        <app-legacy/>
+      } @placeholder {
+        <div class="content-wrapper">
+          <h2>Wanna See Something Cool?</h2>
+          <p>Look in the mirror!</p>
+        </div>
       }
     </mat-tab>
     <mat-tab label="Are You Looking For a Cat?">
-      @defer{
-        <app-list></app-list>
+      @defer(on viewport){
+        <app-list/>
+      } @placeholder {
+        <div class="content-wrapper">
+          <h2>Are You Looking For a Cat?</h2>
+          <p>Here's a list of cats!</p>
+        </div>
       }
     </mat-tab>
   </mat-tab-group>
