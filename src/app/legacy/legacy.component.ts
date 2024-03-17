@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import * as _ from 'lodash';
+import * as _ from 'lodash'; // TODO: STOP USING LODASH
 import { interval, map, startWith, switchMap } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { LegacyService } from './legacy.service';
@@ -65,7 +65,7 @@ export class LegacyComponent {
   coolStuffCarousel$ = this.legacyService.coolStuff$.pipe(
     switchMap((coolStuff) => {
       let index = 0;
-      return interval(3000).pipe(
+      return interval(4000).pipe(
       map(() => {
         index = _.random(0, coolStuff.length - 1);
         return coolStuff[index]
