@@ -1,5 +1,5 @@
 <div class="main-container">
-  <mat-tab-group>
+  <mat-tab-group #homeMenu>
     <mat-tab label="Welcome to Meowmerican Wanderlust">
       <div class="content-wrapper">
         <h2>Welcome to <i>Meowmerican Wanderlust.</i></h2>
@@ -11,21 +11,22 @@
       </div>
     </mat-tab>
     <mat-tab label="What Time Is It?">
-      @defer {
+      @defer (when numberOfClicks === 5) {
         <app-clock/>
       } @placeholder {
         <div class="content-wrapper"><h2> Clock Placeholder</h2></div>
+        <button (click)="addClick()">Number of Clicks: {{ numberOfClicks }}</button>
       }
     </mat-tab>
     <mat-tab label="Wanna See Something Cool?">
-      @defer {
+      @defer (on timer(20s)){
         <app-legacy/>
       } @placeholder {
         <div class="content-wrapper"><h2>Legacy Placeholder</h2></div>
       }
     </mat-tab>
     <mat-tab label="Are You Looking For a Cat?">
-      @defer {
+      @defer (on hover(homeMenu)) {
         <app-list/>
       } @placeholder {
         <div class="content-wrapper"><h2> List Placeholder</h2></div>
@@ -38,7 +39,7 @@
 >
   <a href="https://www.nps.gov/planyourvisit/index.htm" target="_blank">Visit The National Parks</a>
 </div>
-@defer {
+@defer (on viewport){
   <app-footer/>
 } @placeholder {
   <footer class="content-wrapper"><h2>Footer Placeholder</h2></footer>
