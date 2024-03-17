@@ -11,21 +11,9 @@
       </div>
     </mat-tab>
     <mat-tab label="What Time Is It?">
-      @defer {
-        <app-clock/>
-      } @placeholder {
-        <div class="contentWrapper"><h2>Clock Placeholder</h2></div>
-      }
       <app-clock/>
     </mat-tab>
     <mat-tab label="Wanna See Something Cool?">
-      @defer {
-        <app-legacy/>
-      } @placeholder {
-        <div class="contentWrapper"><h2>Legacy Placeholder</h2></div>
-      } @loading {
-        <div class="content-wrapper"><h2>Legacy Loading...</h2></div>
-      }
       <app-legacy/>
     </mat-tab>
     <mat-tab label="Are You Looking For a Cat?">
