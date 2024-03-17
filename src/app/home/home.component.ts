@@ -19,8 +19,9 @@ import { FooterComponent } from '../footer/footer.component';
   styleUrl: './home.component.scss'
 })
 export class HomeComponent {
-  showLegacy = false;
-  showClock = false;
-  showList = false;
+  numberOfClicks = 0;
 
+  addClick () {
+    this.numberOfClicks++;
+  }
 }
