@@ -3,11 +3,14 @@ import * as _ from 'lodash'; // TODO: STOP USING LODASH
 import { interval, map, startWith, switchMap } from 'rxjs';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { LegacyService } from './legacy.service';
+import { NgClass, AsyncPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-legacy',
-  templateUrl: './legacy.component.html',
-  styleUrl: './legacy.component.scss'
+    selector: 'app-legacy',
+    templateUrl: './legacy.component.html',
+    styleUrl: './legacy.component.scss',
+    standalone: true,
+    imports: [NgClass, AsyncPipe]
 })
 export class LegacyComponent {
   thingsThatAreCool = [

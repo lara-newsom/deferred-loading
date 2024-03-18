@@ -1,5 +1,5 @@
 <div class="main-container">
-  <mat-tab-group>
+  <mat-tab-group #homeMenu>
     <mat-tab label="Welcome to Meowmerican Wanderlust">
       <div class="content-wrapper">
         <h2>Welcome to <i>Meowmerican Wanderlust.</i></h2>
@@ -11,13 +11,32 @@
       </div>
     </mat-tab>
     <mat-tab label="What Time Is It?">
-      <app-clock/>
+      @defer (when numberOfClicks === 5) {
+        <app-clock/>
+      } @placeholder {
+        <div class="content-wrapper">
+          <h2>Clock Placeholder</h2>
+          <button (click)="addClick()">Number of Clicks: {{ numberOfClicks }}</button>
+        </div>
+      } @loading (minimum 3s) {
+        <div class="content-wrapper"><h2>Clock Loading...</h2></div>
+      }
     </mat-tab>
     <mat-tab label="Wanna See Something Cool?">
-      <app-legacy/>
+      @defer (on timer(20s)) {
+        <app-legacy/>
+      } @placeholder {
+        <div class="content-wrapper"><h2>Legacy Placeholder</h2></div>
+      } @loading(minimum 5s) {
+        <div class="content-wrapper"><h2> Legacy Loading...</h2></div>
+      }
     </mat-tab>
     <mat-tab label="Are You Looking For a Cat?">
-      <app-list/>
+      @defer (on hover(homeMenu)) {
+        <app-list/>
+      } @placeholder {
+        <div class="content-wrapper"><h2>List Placeholder</h2></div>
+      }
     </mat-tab>
   </mat-tab-group>
 </div>
@@ -26,4 +45,8 @@
 >
   <a href="https://www.nps.gov/planyourvisit/index.htm" target="_blank">Visit The National Parks</a>
 </div>
-<app-footer/>
+@defer (on viewport) {
+  <app-footer/>
+} @placeholder {
+  <footer class="content-wrapper"><h2>Footer Placeholder</h2></footer>
+}
